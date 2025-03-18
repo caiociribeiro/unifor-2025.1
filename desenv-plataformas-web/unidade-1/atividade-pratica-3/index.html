@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Review de Filmes</title>
+        <link rel="stylesheet" href="style.css" />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=favorite"
+        />
+        <script
+            src="https://kit.fontawesome.com/f6e4f2e91f.js"
+            crossorigin="anonymous"
+        ></script>
+    </head>
+    <body>
+        <h1>Caioboxd - Movie Reviews</h1>
+        <button class="btn-add" id="openAddModal">Adicionar Review</button>
+
+        <div class="modal" id="addModal">
+            <div class="modal-content">
+                <div class="modal-header">Adicionar Review</div>
+                <div class="modal-field">
+                    <label for="movieName">Nome do Filme</label>
+                    <input
+                        type="text"
+                        id="movieName"
+                        placeholder="Digite o nome do filme"
+                    />
+                </div>
+                <div class="modal-field">
+                    <label for="movieRating"
+                        >Avaliação (0,5 a 5 estrelas)</label
+                    >
+                    <select id="movieRating">
+                        <option value="0.5">0,5</option>
+                        <option value="1.0">1,0</option>
+                        <option value="1.5">1,5</option>
+                        <option value="2.0">2,0</option>
+                        <option value="2.5">2,5</option>
+                        <option value="3.0">3,0</option>
+                        <option value="3.5">3,5</option>
+                        <option value="4.0">4,0</option>
+                        <option value="4.5">4,5</option>
+                        <option value="5.0">5,0</option>
+                    </select>
+                </div>
+                <div class="modal-field">
+                    <label for="movieLike">Gostei?</label>
+                    <button type="button" id="movieLike" class="btn-like">
+                        <span>
+                            <i class="fa-solid fa-heart"></i>
+                        </span>
+                    </button>
+                </div>
+                <div class="modal-field">
+                    <label for="movieReview">Review</label>
+                    <textarea
+                        id="movieReview"
+                        rows="4"
+                        placeholder="Escreva sua review"
+                    ></textarea>
+                </div>
+                <div class="modal-actions">
+                    <button class="btn-cancel" id="cancelAdd">Cancelar</button>
+                    <button class="btn-confirm" id="confirmAdd">
+                        Adicionar
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal" id="confirmModal">
+            <div class="modal-content">
+                <div class="modal-header">Confirmar Exclusão</div>
+                <p>Tem certeza que deseja excluir essa review?</p>
+                <div class="modal-actions">
+                    <button class="btn-cancel" id="cancelDelete">
+                        Cancelar
+                    </button>
+                    <button class="btn-confirm" id="confirmDelete">
+                        Excluir
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="review-list" id="reviewList"></div>
+
+        <script src="script.js"></script>
+    </body>
+</html>
