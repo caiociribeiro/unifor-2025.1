@@ -1,0 +1,41 @@
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    width: 80vw;
+    height: 15vh;
+    text-align: center;
+}
+
+header h1 {
+    text-align: center;
+    margin-left: 1rem;
+}
+
+ul {
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+}
+
+main {
+    height: 75vh;
+}
+
+section {
+    width: 80vw;
+}
+
+.animal-pictures {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
