@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <h1>Lista de Exercicios - Javascript</h1>
+            </header>
+            <section id="q1">
+                <h2>1. O que é o JavaScript?</h2>
+                <p>
+                    O JavaScript é uma linguagem de programação usada
+                    principalmente como uma linguagem de script para páginas
+                    web. Interage com o HTML, sendo responsavel pela parte
+                    interativa de sites.
+                </p>
+            </section>
+
+            <section id="q2">
+                <h2>2. Qual a diferença entre var, let e const?</h2>
+                <p>
+                    <strong>var:</strong> Possui escopo de funcao. Pode ser
+                    redeclarada. <br />
+                    <strong>let:</strong> Possui escopo de bloco ({}). Nao pode
+                    ser redeclarada no mesmo bloco, mas pode ser reatribuida.
+                    <br />
+                    <strong>const:</strong> Possui escopo de bloco. Nao pode ser
+                    redeclarada e nem reatribuida. (objetos declarados com const
+                    podem ter as suas propriedades reatribuidas.)
+                </p>
+            </section>
+
+            <section id="q3">
+                <h2>3. O que são funções em JavaScript?</h2>
+                <p>
+                    Funcoes sao "subprogramas" que podem ser chamados por codigo
+                    externo (ou interno no caso de recursao).
+                    <br />
+                    <strong>Funcoes tradicionais:</strong> Declaradas com a
+                    keyword <em>function</em>. Possuem seu próprio contexto
+                    <em>this</em>.
+                    <br />
+                    <strong>Arrow functions:</strong> Utilizam a sintaxe () =>
+                    {} e herdam o contexto this do escopo onde foram definidas.
+                </p>
+            </section>
+
+            <section id="q4">
+                <h2>4. O que é o DOM (Document Object Model)?</h2>
+                <p>
+                    DOM é a representação de dados dos objetos que compõem a
+                    estrutura e o conteúdo de um documento na Web. Permite que
+                    linguagens como o JavaScript acessem, modifiquem e atualizem
+                    seus elementos.
+                </p>
+            </section>
+
+            <section id="q5">
+                <h2>
+                    5. Como funciona a execução síncrona e assíncrona no
+                    JavaScript?
+                </h2>
+                <p>
+                    <strong>Código Síncrono:</strong> Executa uma instrução de
+                    cada vez, na ordem em que aparecem.
+                    <br />
+                    <strong>Código Assíncrono:</strong> Permite a execução de
+                    operações sem bloquear o fluxo principal, permitindo
+                    requisições a servidores sem travar a interface do usuário,
+                    por exemplo.
+                </p>
+            </section>
+
+            <section id="q6">
+                <h2>6. O que são Promises e como elas são usadas?</h2>
+                <p>
+                    Uma Promise é um objeto que representa o eventual sucesso
+                    (ou falha) de uma operação assíncrona. Ela permite encadear
+                    operações e tratar erros de forma mais organizada.
+                </p>
+            </section>
+
+            <section id="q7">
+                <h2>7. Explique o uso de async e await em JavaScript.</h2>
+                <p>
+                    async e await são sintaxes que simplificam o trabalho com
+                    promises, permitindo escrever código assíncrono de forma
+                    mais parecida com código síncrono.
+                </p>
+            </section>
+
+            <section id="q8">
+                <h2>8. Qual a diferença entre for...in e for...of?</h2>
+                <p>
+                    <strong>for in:</strong> Itera sobre as propriedades
+                    enumeráveis de um objeto, ou indices de uma array.
+                    <br />
+                    <strong>for off:</strong> Itera sobre valores iteráveis,
+                    como arrays, strings, map, set e etc.
+                </p>
+            </section>
+
+            <section id="q9">
+                <h2>
+                    9. O que é desestruturação (destructuring) em JavaScript?
+                </h2>
+                <p>
+                    Desestruturação permite extrair valores de arrays ou
+                    propriedades de objetos em variáveis distintas.
+                </p>
+                <p><strong>Em arrays:</strong></p>
+                <pre>
+                    <code>
+const numeros = [1, 2, 3];
+const [a, b, c] = numeros;
+console.log(a, b, c); // 1 2 3
+                    </code>
+                </pre>
+                <p><strong>Em objetos:</strong></p>
+                <pre>
+                <code>
+const pessoa = { nome: "Ana", idade: 25 };
+const { nome, idade } = pessoa;
+console.log(nome, idade); // Ana 25
+                </code>
+            </pre>
+            </section>
+
+            <section id="q10">
+                <h2>
+                    10. O que são os operadores spread e rest em JavaScript?
+                </h2>
+                <p>
+                    <strong>Spread:</strong> Expande elementos de um array ou
+                    objeto. <br />
+                    <strong>Rest: </strong> Permite representar um número
+                    indefinido de argumentos na forma de um Array
+                </p>
+                <p><strong>Ex. 1:</strong></p>
+                <pre>
+                    <code>
+const arr1 = [1, 2, 3];
+const arr2 = [...arr1, 4, 5];
+console.log(arr2); // // [1, 2, 3, 4, 5]
+                    </code>
+                </pre>
+                <p><strong>Ex. 2:</strong></p>
+                <pre>
+                    <code>
+function soma(...numeros) {
+  return numeros.reduce((ac, num) => ac + num, 0);
+}
+console.log(soma(1, 2, 3, 4)); // 10
+                    </code>
+                </pre>
+            </section>
+
+            <section id="q11">
+                <h2>
+                    11. Crie um código que altere o conteúdo de um parágrafo na
+                    página HTML ao clicar em um botão.
+                </h2>
+                <p id="paragrafo">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Rem, sequi.
+                </p>
+                <button id="btnAlterar">Alterar Texto</button>
+            </section>
+
+            <section id="q12">
+                <h2>
+                    12. Crie uma função que utilize o método map() para
+                    transformar um array de números, multiplicando cada número
+                    por 2.
+                </h2>
+                <p>Array: [1, 2, 3, 4, 5]</p>
+                <button id="btnMap">Multiplicar Array</button>
+                <p id="resultadoMap"></p>
+            </section>
+
+            <section id="q13">
+                <h2>
+                    13. Implemente um código que use o método filter() para
+                    filtrar todos os números maiores que 10 de um array.
+                </h2>
+                <button id="btnFilter">Filtrar Array</button>
+                <p id="resultadoFilter"></p>
+            </section>
+
+            <section id="q14">
+                <h2>
+                    14. Crie uma função usando reduce() para somar todos os
+                    números de um array.
+                </h2>
+                <button id="btnReduce">Somar Array</button>
+                <p id="resultadoReduce"></p>
+            </section>
+
+            <section id="q15">
+                <h2>
+                    15. Implemente uma busca em um array de objetos utilizando o
+                    método find() para encontrar o primeiro produto com preço
+                    maior que 50.
+                </h2>
+                <button id="btnFind">Buscar Produto</button>
+                <p id="resultadoFind"></p>
+            </section>
+
+            <section id="q16">
+                <h2>
+                    16. Crie uma função que utilize o método forEach() para
+                    percorrer um array de strings e exibir cada elemento no
+                    console.
+                </h2>
+                <button id="btnForEach">Exibir Frutas</button>
+                <p id="resultadoForEach"></p>
+            </section>
+
+            <section id="q17">
+                <h2>
+                    17. Crie uma requisição assíncrona utilizando fetch() para
+                    buscar dados de uma API externa e exibi-los na tela.
+                </h2>
+                <button id="btnFetch">Buscar Usuário</button>
+                <p id="resultadoFetch"></p>
+            </section>
+
+            <section id="q18">
+                <h2>
+                    18. Crie um exemplo de como armazenar e recuperar um objeto
+                    em JSON usando LocalStorage.
+                </h2>
+                <button id="btnLocalStorage">Salvar/Recuperar Objeto</button>
+                <p id="resultadoLocalStorage"></p>
+            </section>
+
+            <section id="q19">
+                <h2>19. Validação de Formulário</h2>
+                <form id="formulario">
+                    <input
+                        type="text"
+                        id="inputNome"
+                        placeholder="Digite seu nome"
+                    />
+                    <button type="submit">Enviar</button>
+                </form>
+            </section>
+
+            <section id="q20">
+                <h2>20. Criando um Relógio Digital</h2>
+                <div id="relogioDigital"></div>
+            </section>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
