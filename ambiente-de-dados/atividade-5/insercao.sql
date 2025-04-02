@@ -1,5 +1,7 @@
 START TRANSACTION;
 
+USE caioribeiro;
+
 INSERT INTO tipo_cliente (descricao) VALUES ('vip');
 INSERT INTO tipo_cliente (descricao) VALUES ('comum');
 
@@ -27,6 +29,16 @@ INSERT INTO cliente (nome, nascimento, id_tipo_cliente, id_sexo)
 VALUES ('Tobias Cruz', '1995-11-09 00:00:00', 2, 1);
 INSERT INTO cliente (nome, nascimento, id_tipo_cliente, id_sexo)
 VALUES ('Fernanda', '1999-12-05 23:00:00', 1, 2);
+
+INSERT INTO endereco (logradouro, numero, complemento, bairro, cidade, cep, uf, id_cliente)
+VALUES ('Rua Professor Otavio Lobo', '540', 'apto 102', 'coco', 'fortaleza', '60192290', 'ce', 1);
+INSERT INTO endereco (logradouro, numero, complemento, bairro, cidade, cep, uf, id_cliente)
+VALUES ('Rua Irmã Simas', '100', 'apto 202 bloco 1', 'mucuripe', 'fortaleza', '60165220', 'ce', 3);
+INSERT INTO endereco (logradouro, numero, complemento, bairro, cidade, cep, uf, id_cliente)
+VALUES ('Rua Professor Otavio Lobo', '540', 'apto 1601', 'coco', 'fortaleza', 'fortaleza', 'ce', 2);
+INSERT INTO endereco (logradouro, numero, complemento, bairro, cidade, cep, uf, id_cliente)
+VALUES ('Alameda Santos', '200', 'Casa', 'Cerqueira César', 'sao paulo', '01419-001', 'sp', 4);
+
 
 INSERT INTO telefone (numero, id_cliente) VALUES ('+558599999999', 1);
 INSERT INTO telefone (numero, id_cliente) VALUES ('+558599999998', 1);
