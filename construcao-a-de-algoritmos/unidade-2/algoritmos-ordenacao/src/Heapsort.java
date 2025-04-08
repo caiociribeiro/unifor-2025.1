@@ -64,7 +64,7 @@ public class Heapsort {
     }
 
     public static void main(String[] args) {
-        int[] arr = geraArrayAleatoria(10, 1, 100);
+        int[] arr = geraArrayAleatoria(10, 1, 1000);
         System.out.println(Arrays.toString(arr));
 
         heapsort(arr);
