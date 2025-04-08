@@ -1,7 +1,7 @@
 public class Sort {
 
 
-    //Quicksort
+    // Quicksort
 
     /**
      * Posiciona um elemento no vetor de modo que os elementos a sua esquerda sao menores ou iguais
@@ -100,4 +100,7 @@ public class Sort {
             maxHeapify(arr, 1, n);
         }
     }
+
+    //TODO: mergesort
+
 }
