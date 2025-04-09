@@ -1,6 +1,5 @@
 public class Sort {
 
-
     // Quicksort
 
     /**
@@ -38,12 +37,19 @@ public class Sort {
      * @param p   posicao inicial do subvetor a ser ordenado
      * @param r   posicao final do subvetor a ser ordenado
      */
-    public static void quicksort(int[] arr, int p, int r) {
+    private static void quicksort(int[] arr, int p, int r) {
         if (p < r) {
             int q = partition(arr, p, r);
             quicksort(arr, p, q - 1);
             quicksort(arr, q + 1, r);
         }
+    }
+
+    /**
+     * @param arr vetor a ser ordenado
+     */
+    public static void quicksort(int[] arr) {
+        quicksort(arr, 0, arr.length - 1);
     }
 
     // Heapsort
