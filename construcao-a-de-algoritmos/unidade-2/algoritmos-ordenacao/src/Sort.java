@@ -186,7 +186,36 @@ public class Sort {
 
     //TODO: selectionsort
 
-    //TODO: countingsort
+    /*
+     *
+     * Counting-sort
+     *
+     */
+
+    public static int[] countingsort(int[] arr) {
+        int largest = arr[0];
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] > largest)
+                largest = arr[i];
+        }
+
+        int[] map = new int[largest + 1];
+        for (int i : arr) {
+            map[i] += 1;
+        }
+
+        for (int i = 1; i < map.length; i++) {
+            map[i] += map[i - 1];
+        }
+
+        int[] sortedArr = new int[arr.length];
+        for (int i = sortedArr.length - 1; i >= 0; i--) {
+            sortedArr[map[arr[i]] - 1] = arr[i];
+            map[arr[i]]--;
+        }
+
+        return sortedArr;
+    }
 
     /*
      *

@@ -34,7 +34,7 @@ public class Main {
             System.out.print("(1) Quicksort\n(2) Heapsort\n(3) Mergesort\n(4) Insertion-sort\n");
             System.out.print("Escolha: ");
             int choice = in.nextInt();
-            while (choice <= 0 || choice > 4) {
+            while (choice <= 0 || choice > 5) {
                 System.out.print("Invalido. Escolha: ");
                 choice = in.nextInt();
             }
@@ -52,6 +52,9 @@ public class Main {
                     break;
                 case 4:
                     Sort.insertionsort(a);
+                    break;
+                case 5:
+                    a = Sort.countingsort(a);
                     break;
             }
             long fim = System.nanoTime();
