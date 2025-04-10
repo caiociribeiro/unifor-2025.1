@@ -1,5 +1,6 @@
 import java.util.Arrays;
 import java.util.Random;
+import java.util.Scanner;
 
 public class Main {
 
@@ -24,20 +25,39 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        int[] a = randomArray(10, 1, 1000);
-        System.out.println(Arrays.toString(a));
+        Scanner in = new Scanner(System.in);
 
-        Sort.quicksort(a);
-        System.out.println("Quicksort...");
-        System.out.println(Arrays.toString(a));
+        while (true) {
+            int[] a = randomArray(100, 1, 1000);
+            System.out.println(Arrays.toString(a));
 
-        System.out.println();
+            System.out.print("(1) Quicksort\n(2) Heapsort\n(3) Mergesort\n");
+            System.out.print("Escolha: ");
+            int choice = in.nextInt();
 
-        int[] b = randomArray(10, 1, 1000);
-        System.out.println(Arrays.toString(b));
+            long inicio = System.nanoTime();
+            switch (choice) {
+                case 1:
+                    Sort.quicksort(a);
+                    break;
+                case 2:
+                    Sort.heapsort(a);
+                    break;
+                case 3:
+                    Sort.mergesort(a);
+                    break;
+            }
+            long fim = System.nanoTime();
 
-        Sort.heapsort(b);
-        System.out.println("Heapsort...");
-        System.out.println(Arrays.toString(b));
+            System.out.println(Arrays.toString(a));
+            System.out.printf("Executou em %d nanossegundos\n", fim - inicio);
+
+            System.out.print("Continuar (S/N): ");
+            if (in.next().equalsIgnoreCase("n")) break;
+
+            System.out.println("\n");
+        }
+
+        in.close();
     }
 }
