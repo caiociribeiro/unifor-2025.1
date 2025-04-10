@@ -31,10 +31,10 @@ public class Main {
             int[] a = randomArray(100, 1, 1000);
             System.out.println(Arrays.toString(a));
 
-            System.out.print("(1) Quicksort\n(2) Heapsort\n(3) Mergesort\n");
+            System.out.print("(1) Quicksort\n(2) Heapsort\n(3) Mergesort\n(4) Insertion-sort\n");
             System.out.print("Escolha: ");
             int choice = in.nextInt();
-            while (choice <= 0 || choice > 3) {
+            while (choice <= 0 || choice > 4) {
                 System.out.print("Invalido. Escolha: ");
                 choice = in.nextInt();
             }
@@ -49,6 +49,9 @@ public class Main {
                     break;
                 case 3:
                     Sort.mergesort(a);
+                    break;
+                case 4:
+                    Sort.insertionsort(a);
                     break;
             }
             long fim = System.nanoTime();
