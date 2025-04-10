@@ -1,6 +1,10 @@
 public class Sort {
 
-    // Quicksort
+    /*
+     *
+     * Quicksort
+     *
+     */
 
     /**
      * Posiciona um elemento no vetor de modo que os elementos a sua esquerda sao menores ou iguais
@@ -52,7 +56,11 @@ public class Sort {
         quicksort(arr, 0, arr.length - 1);
     }
 
-    // Heapsort
+    /*
+     *
+     * Heapsort
+     *
+     */
 
     /**
      * Constroi uma max-heap a partir de um vetor aleatorio.
@@ -60,8 +68,8 @@ public class Sort {
      * @param arr vetor a ser transformado em maxheap
      */
     private static void buildMaxHeap(int[] arr) {
-        for (int j = (arr.length - 1) / 2; j >= 1; j--) {
-            maxHeapify(arr, j, arr.length - 1);
+        for (int j = arr.length / 2; j >= 0; j--) {
+            maxHeapify(arr, j, arr.length);
         }
     }
 
@@ -73,13 +81,19 @@ public class Sort {
      * @param n   tamanho da heap
      */
     private static void maxHeapify(int[] arr, int i, int n) {
-        int l = i * 2;
-        int r = i * 2 + 1;
-        if (l <= n) {
-            int largest = arr[l] > arr[i] ? l : i;
-            if (r <= n) {
-                largest = arr[r] > arr[largest] ? r : largest;
+        int l = i * 2 + 1;
+        int r = i * 2 + 2;
+
+        int largest = i;
+
+        if (l < n) {
+            if (arr[l] > arr[largest])
+                largest = l;
+
+            if (r < n && arr[r] > arr[largest]) {
+                largest = r;
             }
+
             if (largest != i) {
                 int aux = arr[i];
                 arr[i] = arr[largest];
@@ -95,18 +109,31 @@ public class Sort {
      */
     public static void heapsort(int[] arr) {
         buildMaxHeap(arr);
-        int n = arr.length - 1;
-        for (int i = n; i >= 2; i--) {
+
+        for (int n = arr.length, i = n - 1; i >= 1; i--) {
             int aux = arr[i];
-            arr[i] = arr[1];
-            arr[1] = aux;
+            arr[i] = arr[0];
+            arr[0] = aux;
 
             n--;
 
-            maxHeapify(arr, 1, n);
+            maxHeapify(arr, 0, n);
         }
     }
 
-    //TODO: mergesort
+    /*
+     *
+     * Mergesort
+     *
+     */
+
+    
+    //TODO: selectionsort
+
+    //TODO: countingsort
+
+    //TODO: insertionsort
+
+    //TODO: bubblesort
 
 }
