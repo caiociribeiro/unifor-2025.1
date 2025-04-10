@@ -34,6 +34,10 @@ public class Main {
             System.out.print("(1) Quicksort\n(2) Heapsort\n(3) Mergesort\n");
             System.out.print("Escolha: ");
             int choice = in.nextInt();
+            while (choice <= 0 || choice > 3) {
+                System.out.print("Invalido. Escolha: ");
+                choice = in.nextInt();
+            }
 
             long inicio = System.nanoTime();
             switch (choice) {
