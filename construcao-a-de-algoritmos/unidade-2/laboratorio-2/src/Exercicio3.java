@@ -14,34 +14,38 @@ public class Exercicio3 {
         imprime(criancas);
     }
 
+    static void troca(Crianca[] A, int i, int j) {
+        Crianca aux = A[i];
+        A[i] = A[j];
+        A[j] = aux;
+    }
+
     static void organizaTurno(Crianca[] A) {
         for (int i = A.length - 1, t = i; i >= 0; i--) {
             if (A[i].turno == 'T') {
-                Crianca aux = A[i];
-                A[i] = A[t];
-                A[t] = aux;
+                troca(A, i, t);
                 t--;
             }
         }
     }
 
     static void organizaIdade(Crianca[] A) {
+        // j - ponteiro da idade 11 a 13
+        // k - ponteiro da idade de 14 a 16
         for (int i = A.length - 1, j = i, k = i; i >= 0; i--) {
+            // se o elemento atual pertence ao grupo de 14 a 16, faz a troca com o elemento no ponteiro k
             if (A[i].idade >= 6 && A[i].idade <= 10) {
-                Crianca aux = A[i];
-                A[i] = A[k];
-                A[k] = aux;
+                troca(A, i, k);
+                // se o ponteiro j nao estiver na mesma posicao de k
+                // com certeza o elemento trocado era um elemento da idade 11 a 13
+                // portanto faz a troca
                 if (j < k) {
-                    aux = A[i];
-                    A[i] = A[j];
-                    A[j] = aux;
+                    troca(A, i, j);
                 }
                 k--;
                 j--;
             } else if (A[i].idade >= 11 && A[i].idade <= 13) {
-                Crianca aux = A[i];
-                A[i] = A[j];
-                A[j] = aux;
+                troca(A, i, j);
                 j--;
             }
         }
